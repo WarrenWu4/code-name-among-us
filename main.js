@@ -32,6 +32,14 @@ input.addEventListener('keypress', function(event) {
       let crew = document.getElementById('addedp2c');
       crew.appendChild(addperson);
     }
+    const p1crew = document.getElementById('player1crewmate');
+    p1crew.remove();
+    const p1cap = document.getElementById('player1captain');
+    p1cap.remove();
+    const p2crew = document.getElementById('player2crewmate');
+    p2crew.remove();
+    const p2cap = document.getElementById('player2captain');
+    p2cap.remove();
   }
 });
 
