@@ -1,0 +1,42 @@
+.unknown {
+    display: flex;
+    background-image: url('/assets/basecard.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgb(198, 225, 249);
+    border: 10%;
+    border-radius: 10%;
+    padding: 6% 5% 3% 5%;
+    margin-left: 3px;
+    margin-right: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.discovered {
+    /* background-image: none;
+    background-color: white;
+    border: 1rem solid rgb(213, 194, 68);
+    border-top: 40px;
+    border-bottom: 50px;
+    border-radius: 15%;
+    padding: 2% 2% .5% 2%;
+    align-content: center;
+    justify-items: center;
+    margin-left: 3px;
+    margin-right: 3px;
+    min-width: 40px;
+    min-height: 35px;
+    max-width: 100px;
+    max-height: 90px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center; */
+}
+
+/* img.board-image {
+    border-radius: 10%;
+    justify-content: center;
+    max-width: 75%;
+    max-height: 75%;
+    padding-bottom: 1px;
+} */

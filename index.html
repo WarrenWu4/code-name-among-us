@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="card.css">
+    <title>Code Name</title>
+  </head>
+  <body>
+
+    <!--Pop up to ask for name-->   
+    <div id="overlay">
+      <div id="overlaybox">
+        <form action="">
+          <h1>Please enter your username to start</h1>
+          <input type="text" id="username">
+        </form>
+      </div>
+    </div>
+    
+    <!--NavBar-->
+    <ul class="navbar">
+      <li><img src="\assets\logo.png"></li>
+      <li><a href="#name">Name</a></li>
+      <li><a href="#link">Share Link</a></li>
+      <li><a href="#rules">Rules</a></li>
+    </ul>
+
+    <!--Player Cards-->
+    <div class="playercontainer">
+      <div class=player1>
+        <img src="\assets\fillerimage.png">
+        <h2>Crewmate(s)</h2>
+        <ul id="addedp1"></ul>
+        <button id="player1crewmate">Join as Crewmate</button>
+        <h2>Captain(s)</h2>
+        <ul id="addedp1c"></ul>
+        <button id="player1captain">Join as Captain</button>
+      </div>
+
+      <!--Board-->
+      <div class=board>
+        <div id=row1 class=row>
+          <span id=card1-1 class=unknown>
+            Card
+          </span>
+          <span id=card1-2 class=unknown>
+            Card
+          </span>
+          <span id=card1-3 class=unknown>
+            Card
+          </span>
+          <span id=card1-4 class=unknown>
+            Card
+          </span>
+          <span id=card1-5 class=unknown>
+            Card
+          </span>
+        </div>
+        <div id=row2 class=row>
+          <span id=card2-1 class=unknown>
+            Card
+          </span>
+          <span id=card2-2 class=unknown>
+            Card
+          </span>
+          <span id=card2-3 class=unknown>
+            Card
+          </span>
+          <span id=card2-4 class=unknown>
+            Card
+          </span>
+          <span id=card2-5 class=unknown>
+            Card
+          </span>
+        </div>
+        <div id=row3 class=row>
+          <span id=card3-1 class=unknown>
+            Card
+          </span>
+          <span id=card3-2 class=unknown>
+            Card
+          </span>
+          <span id=card3-3 class=unknown>
+            Card
+          </span>
+          <span id=card3-4 class=unknown>
+            Card
+          </span>
+          <span id=card3-5 class=unknown>
+            Card
+          </span>
+        </div>
+        <div id=row4 class=row>
+          <span id=card4-1 class=unknown>
+            Card
+          </span>
+          <span id=card4-2 class=unknown>
+            Card
+          </span>
+          <span id=card4-3 class=unknown>
+            Card
+          </span>
+          <span id=card4-4 class=unknown>
+            Card
+          </span>
+          <span id=card4-5 class=unknown>
+            Card
+          </span>
+        </div>
+        <div id=row5 class=row>
+          <span id=card5-1 class=unknown>
+            Card
+          </span>
+          <span id=card5-2 class=unknown>
+            Card
+          </span>
+          <span id=card5-3 class=unknown>
+            Card
+          </span>
+          <span id=card5-4 class=unknown>
+            Card
+          </span>
+          <span id=card5-5 class=unknown>
+            Card
+          </span>
+        </div>
+      </div>
+
+      <div class=player2>
+        <img src="\assets\fillerimage.png">
+        <h2>Crewmate(s)</h2>
+        <ul id="addedp2"></ul>
+        <button id="player2crewmate">Join as Crewmate</button>
+        <h2>Captain(s)</h2>
+        <ul id="addedp2c"></ul>
+        <button id="player2captain">Join as Captain</button>
+      </div>
+    </div>
+
+
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/card.js"></script>
+  </body>
+</html>
