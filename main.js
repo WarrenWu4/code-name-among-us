@@ -1,17 +1,37 @@
 import './style.css'
 
+
+
 let input = document.getElementById('username');
 input.addEventListener('keypress', function(event) {
   if (event.key === 'Enter') {
+    sessionStorage.setItem('user', document.getElementById('username').value);
+    console.log(sessionStorage.getItem('user'), sessionStorage.getItem('role'));
     document.getElementById('overlay').style.display="none";
     document.getElementById('overlaybox').style.display="none";
     event.preventDefault();
+  }
+  if (sessionStorage.getItem('user') == sessionStorage.getItem('user') && sessionStorage.getItem('role') != null) {
+    const addperson = document.createElement('li');
+    addperson.textContent = sessionStorage.getItem('user');
+    const crew = document.getElementById('addedp1'); //declare and initialize default for crew
+    if (sessionStorage.getItem('role') == 'p1cap') {
+      const crew = document.getElementById('addedp1c');
+    }
+    if (sessionStorage.getItem('role') == 'p2crew') {
+      const crew = document.getElementById('addedp2');
+    }
+    if (sessionStorage.getItem('role') == 'p2cap') {
+      const crew = document.getElementById('addedp2c');
+    }
+    crew.appendChild(addperson);
   }
 });
 
 
 const p1crew = document.getElementById('player1crewmate');
 p1crew.onclick=function addCrewmate() {
+  sessionStorage.setItem('role', 'p1crew');
   const addperson = document.createElement('li');
   addperson.textContent = document.getElementById('username').value;
   const crew = document.getElementById('addedp1');
@@ -27,12 +47,13 @@ p1crew.onclick=function addCrewmate() {
   document.querySelector('#clues').innerHTML = `
     <h1 id="showClue"></h1>
   `
-  console.log(localStorage.getItem('clueValue'));
-  document.getElementById('showClue').innerHTML = localStorage.getItem('clueValue');
+  console.log(sessionStorage.getItem('clueValue'));
+  document.getElementById('showClue').innerHTML = sessionStorage.getItem('clueValue');
 }
 
 const p1cap = document.getElementById('player1captain');
 p1cap.onclick=function addCaptain() {
+  sessionStorage.setItem('role', 'p1cap');
   const addperson = document.createElement('li');
   addperson.textContent=document.getElementById('username').value;
   const crew = document.getElementById('addedp1c');
@@ -54,8 +75,8 @@ p1cap.onclick=function addCaptain() {
   let textClue = document.getElementById('textClue');
   textClue.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
-      localStorage.setItem('clueValue', document.getElementById('textClue').value);
-      console.log(localStorage.getItem('clueValue'));
+      sessionStorage.setItem('clueValue', document.getElementById('textClue').value);
+      console.log(sessionStorage.getItem('clueValue'));
       document.getElementById('overlay').style.display="none";
       event.preventDefault();
     }
@@ -64,6 +85,7 @@ p1cap.onclick=function addCaptain() {
 
 const p2crew = document.getElementById('player2crewmate');
 p2crew.onclick=function addCrewmate() {
+  sessionStorage.setItem('role', 'p2crew');
   const addperson = document.createElement('li');
   addperson.textContent = document.getElementById('username').value;
   const crew = document.getElementById('addedp2');
@@ -80,6 +102,7 @@ p2crew.onclick=function addCrewmate() {
 
 const p2cap = document.getElementById('player2captain');
 p2cap.onclick=function addCaptain() {
+  sessionStorage.setItem('role', 'p2cap');
   const addperson = document.createElement('li');
   addperson.textContent=document.getElementById('username').value;
   const crew = document.getElementById('addedp2c');
