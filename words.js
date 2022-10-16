@@ -16,7 +16,8 @@ let currEle = document.getElementById('card5-5');
 currEle.onclick = function loadWords() {
     for (let i = 0; i < 5; i++) {
         for(let j = 0; j < 5; j++) {
-            document.getElementById('card' + (i + 1).toString() + '-' + (j + 1).toString()).innerHTML = words[i][j];
+            let word = document.createElement('span').appendChild(document.createTextNode(words[i][j]));
+            document.getElementById('card' + (i + 1).toString() + '-' + (j + 1).toString()).innerHTML = word;
         }
     }
 }

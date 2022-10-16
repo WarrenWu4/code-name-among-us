@@ -24,6 +24,11 @@ p1crew.onclick=function addCrewmate() {
   p2crew.remove();
   const p2cap = document.getElementById('player2captain');
   p2cap.remove();
+  document.querySelector('#clues').innerHTML = `
+    <h1 id="showClue"></h1>
+  `
+  console.log(localStorage.getItem('clueValue'));
+  document.getElementById('showClue').innerHTML = localStorage.getItem('clueValue');
 }
 
 const p1cap = document.getElementById('player1captain');
@@ -39,7 +44,7 @@ p1cap.onclick=function addCaptain() {
   const p2crew = document.getElementById('player2crewmate');
   p2crew.remove();
   const p2cap = document.getElementById('player2captain');
-  p2cap.remove();/*
+  p2cap.remove();
   document.querySelector('#clues').innerHTML = `
     <form>
       <h1>Enter a word followed by the number of words that apply to it! (Ex: blue 2)</h1>
@@ -49,16 +54,12 @@ p1cap.onclick=function addCaptain() {
   let textClue = document.getElementById('textClue');
   textClue.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
+      localStorage.setItem('clueValue', document.getElementById('textClue').value);
+      console.log(localStorage.getItem('clueValue'));
       document.getElementById('overlay').style.display="none";
-      let fs = require('fs');
-      fs.writeFile("data.txt", document.getElementById('textClue').value, function (err) {
-        if (err) {
-          return console.error(err);
-        }
-      });
       event.preventDefault();
     }
-  });*/
+  });
 }
 
 const p2crew = document.getElementById('player2crewmate');
@@ -91,4 +92,17 @@ p2cap.onclick=function addCaptain() {
   p2crew.remove();
   const p2cap = document.getElementById('player2captain');
   p2cap.remove();
+  document.querySelector('#clues').innerHTML = `
+    <form>
+      <h1>Enter a word followed by the number of words that apply to it! (Ex: blue 2)</h1>
+      <input type="text" id="textClue">
+    </form>
+  `
+  let textClue = document.getElementById('textClue');
+  textClue.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+      document.getElementById('overlay').style.display="none";
+      event.preventDefault();
+    }
+  });
 }
