@@ -30,6 +30,12 @@ p1cap.onclick=function addCaptain() {
   p2crew.remove();
   const p2cap = document.getElementById('player2captain');
   p2cap.remove();
+  document.querySelector('#clues').innerHTML = `
+    <form>
+        <h3>Type in a clue and the number of cards it applies to!</h3>
+        <input type="text" id="textClue">
+    </form>
+  `
 }
 
 const p2crew = document.getElementById('player2crewmate');
@@ -62,6 +68,12 @@ p2cap.onclick=function addCaptain() {
   p2crew.remove();
   const p2cap = document.getElementById('player2captain');
   p2cap.remove();
+  document.querySelector('#clues').innerHTML = `
+  <form>
+      <h3>Type in a clue and the number of cards it applies to!</h3>
+      <input type="text" id="textClue">
+  </form>
+  `
 }
 
 let input = document.getElementById('username');
