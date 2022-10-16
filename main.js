@@ -1,6 +1,5 @@
 import './style.css';
 
-
 let input = document.getElementById('username');
 input.addEventListener('keypress', function(event) {
   if (event.key === 'Enter') {
